@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class CDGroupBuyingFooterView;
 
-//定义代理协议
+//第一步:定义代理协议
 @protocol CDGroupBuyingFooterDelegate <NSObject>
 
 @optional
@@ -18,8 +18,8 @@
 @end
 
 @interface CDGroupBuyingFooterView : UIView
-//定义代理属性
-@property (nonatomic,weak) id<CDGroupBuyingFooterDelegate> delegat;
+//第二步:定义代理属性
+@property (nonatomic,weak) id<CDGroupBuyingFooterDelegate> delegate;
 
 //返回footerView
 +(instancetype)footerView;

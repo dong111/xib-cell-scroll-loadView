@@ -46,6 +46,11 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.loadMoreBtn.hidden = NO;
         self.loadMoreView.hidden = YES;
+        //第三步，向代理对象发送消息
+        if ([self respondsToSelector:@selector(footerViewDidClickedMoreBtn:)]) {
+            [self.delegate footerViewDidClickedMoreBtn:self];
+        }
+        
     });
     
     
