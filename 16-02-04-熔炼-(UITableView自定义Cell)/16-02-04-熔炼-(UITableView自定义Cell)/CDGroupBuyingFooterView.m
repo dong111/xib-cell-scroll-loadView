@@ -7,6 +7,7 @@
 //
 
 #import "CDGroupBuyingFooterView.h"
+#import "CDGroupBuyingCell.h"
 
 @interface CDGroupBuyingFooterView ()
 
@@ -38,6 +39,14 @@
     self.loadMoreBtn.hidden = YES;
     self.loadMoreView.hidden = NO;
     
+//延长执行,需要先定义个有执行逻辑的方法，才能调用
+//    self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>
+
+//不想定义一个新的方法来封装执行逻辑,节省一个方法的定义
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.loadMoreBtn.hidden = NO;
+        self.loadMoreView.hidden = YES;
+    });
     
     
 }
