@@ -34,8 +34,7 @@
 
 //点击加载更多按钮
 - (IBAction)loadMoreClick:(id)sender {
-    NSLog(@"加载更多！");
-    
+
     self.loadMoreBtn.hidden = YES;
     self.loadMoreView.hidden = NO;
     
@@ -47,7 +46,7 @@
         self.loadMoreBtn.hidden = NO;
         self.loadMoreView.hidden = YES;
         //第三步，向代理对象发送消息
-        if ([self respondsToSelector:@selector(footerViewDidClickedMoreBtn:)]) {
+        if ([self.delegate respondsToSelector:@selector(footerViewDidClickedMoreBtn:)]) {
             [self.delegate footerViewDidClickedMoreBtn:self];
         }
         

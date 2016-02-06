@@ -22,7 +22,7 @@
 }
 
 
-+ (NSArray *) groupBuyingsList{
++ (NSMutableArray *) groupBuyingsList{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"tgs" ofType:@"plist"];
     
     NSArray *dicArray = [NSArray arrayWithContentsOfFile:path];
